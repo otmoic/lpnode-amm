@@ -1,5 +1,5 @@
-# base image
-FROM docker.io/library/node:20.11.0-buster
+# base image - use Ubuntu instead of buster (buster is EOL)
+FROM docker.io/library/node:20.11.0
 
 # Install ts-node globally
 RUN npm install -g ts-node typescript
@@ -10,7 +10,7 @@ ADD ./ /data/lp_main/
 # Expose port
 EXPOSE 18081
 
-# Set working directory  
+# Set working directory
 WORKDIR /data/lp_main/
 
 # Install system dependencies
